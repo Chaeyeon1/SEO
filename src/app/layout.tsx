@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: 'Chaeyeon_SEO',
   description: '김수돌과 신채돌의 개발 일기',
   keywords: ['김수돌', '신채돌', 'SEO', '개발', '일기'],
-  robots: 'noindex',
 };
 
 export default function RootLayout({
