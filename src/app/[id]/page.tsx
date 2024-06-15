@@ -1,4 +1,5 @@
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata, MetadataRoute, ResolvingMetadata } from 'next';
+import { BASE_URL } from '../constant';
 
 type Props = {
   params: { id: string };
@@ -10,14 +11,11 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const id = params.id;
-  const baseURL = 'https://seo-fawn.vercel.app';
-  const product = await fetch(`${baseURL}/api?name=${id}`).then((res) =>
+  const product = await fetch(`${BASE_URL}/api?name=${id}`).then((res) =>
     res.json()
   );
-  const previousImages = (await parent).openGraph?.images || [];
-
   return {
-    metadataBase: new URL(baseURL),
+    metadataBase: new URL(BASE_URL),
     title: `${product}`,
     description: '김수돌과 신채돌의 개발 일기',
     keywords: ['김수돌', '신채돌', 'SEO', '개발', '일기'],
