@@ -21,7 +21,6 @@ export async function generateMetadata(
     title: `${product}`,
     description: '김수돌과 신채돌의 개발 일기',
     keywords: ['김수돌', '신채돌', 'SEO', '개발', '일기'],
-    robots: 'noindex',
     openGraph: {
       title: '저랑 공부하실래용?',
       description: '챕터 1. SEO',
