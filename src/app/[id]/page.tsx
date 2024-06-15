@@ -20,7 +20,24 @@ export async function generateMetadata(
     metadataBase: new URL(baseURL),
     title: `${product}`,
     openGraph: {
-      images: ['/some-specific-page-image.jpg', ...previousImages],
+      title: '저랑 공부하실래용?',
+      description: '챕터 1. SEO',
+      images: [
+        {
+          url: '/opengraph-image.png',
+          alt: '이미지 설명',
+        },
+      ],
+    },
+    twitter: {
+      title: '트위터 하이!',
+      description: '챕터 1. SEO',
+      images: [
+        {
+          url: '/twitter-image.png',
+          alt: '이미지 설명',
+        },
+      ],
     },
   };
 }
