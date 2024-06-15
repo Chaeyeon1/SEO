@@ -32,8 +32,6 @@ export async function generateMetadata(
         },
       ],
     },
-    ['naver-site-verification' as any]:
-      'f92dce300102fa2c730313dc1f2fc4c907edcc93',
     twitter: {
       title: '트위터 하이!',
       description: '챕터 1. SEO',
