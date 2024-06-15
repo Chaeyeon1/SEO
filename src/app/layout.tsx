@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   title: 'Chaeyeon_SEO',
   description: '김수돌과 신채돌의 개발 일기',
   keywords: ['김수돌', '신채돌', 'SEO', '개발', '일기'],
-  ['naver-site-verification' as any]:
-    'f92dce300102fa2c730313dc1f2fc4c907edcc93',
   robots: 'noindex',
 };
 
