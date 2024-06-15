@@ -19,6 +19,7 @@ export async function generateMetadata(
   return {
     metadataBase: new URL(baseURL),
     title: `${product}`,
+    description: '김수돌과 신채돌의 개발 일기',
     openGraph: {
       title: '저랑 공부하실래용?',
       description: '챕터 1. SEO',
@@ -43,5 +44,10 @@ export async function generateMetadata(
 }
 
 export default function Page() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>우린 지금 무엇을 하고 있을까?</h1>
+      <p>김수돌신채돌김수돌신채돌</p>
+    </div>
+  );
 }
