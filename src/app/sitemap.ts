@@ -2,9 +2,7 @@ import { MetadataRoute } from 'next';
 import { BASE_URL } from './constant';
 
 export const getProducts = () => {
-  return fetch(`${BASE_URL}/api/all`, {
-    next: { revalidate: 60 * 10 }, // 10분 캐시
-  })
+  return fetch(`${BASE_URL}/api/all`)
     .then((res) => {
       if (!res.ok) {
         return Promise.reject();
