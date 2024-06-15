@@ -14,6 +14,10 @@ export const metadata: Metadata = {
       'naver-site-verification': 'Ot9R1wLIt3DP15IpoikrTHTptAcVxD5f-MX5poEjgrQ',
     },
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
