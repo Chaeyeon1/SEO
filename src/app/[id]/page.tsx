@@ -44,7 +44,14 @@ export async function generateMetadata(
 
 export default function Page() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        margin: '16px',
+      }}
+    >
       <h1>김수연과 이봉이의 상관성</h1>
       <div>
         <div className='title'>
