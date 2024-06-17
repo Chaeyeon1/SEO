@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -32,6 +33,18 @@ const page = () => {
       >
         상세 정보 보기
       </Link>
+
+      <h4 style={{ marginTop: '32px' }}> ** 2024-6-17 수정된 사항</h4>
+      <div>교동이 팬클럽 본업으로 전환</div>
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
+        <div>출처</div>
+        <Image
+          width={200}
+          height={200}
+          alt='수돌_교동_팬클럽'
+          src={'/교동.png'}
+        />
+      </div>
     </div>
   );
 };
