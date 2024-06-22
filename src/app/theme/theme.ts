@@ -2,28 +2,22 @@ import { css } from 'styled-components';
 
 /** 자주 사용하는 색상들 */
 const colors = {
-  slate50: '#f8fafc',
-  slate100: '#f1f5f9',
-  slate200: '#e2e8f0',
-  slate300: '#cbd5e1',
-  slate400: '#94a3b8',
-  slate500: '#64748b',
-  slate600: '#475569',
-  slate700: '#334155',
-  slate800: '#1e293b',
-  slate900: '#0f172a',
+  slate100: '#FED9DA',
+  slate200: '#FDB3B4',
+  slate300: '#FB8D8F',
+  slate400: '#FA6769',
+  slate500: '#F94144',
+  slate600: '#C73436',
+  slate700: '#952729',
+  slate800: '#952729',
+  slate900: '#320D0E',
   /* 나머지 색상들 생략 ( https://tailwindcss.com/docs/customizing-colors ) */
 
-  main50: '#eef2ff',
-  main100: '#e0e7ff',
-  main200: '#c7d2fe',
-  main300: '#a5b4fc',
-  main400: '#818cf8',
-  main500: '#6366f1',
-  main600: '#4f46e5',
-  main700: '#4338ca',
-  main800: '#3730a3',
-  main900: '#312e81',
+  gray100: '#999999',
+  gray200: '#777777',
+  gray300: '#555555',
+  gray400: '#333333',
+  gray500: '#111111',
 
   /* 아래 부분을 비워둔 이유는 타입때문 ( "<ThemeProvider>"에서 조건에 따라 다르게 값을 채움 ) */
   color: '',
@@ -32,13 +26,13 @@ const colors = {
 };
 
 /** 검정 배경 */
-export const darkTheme = {
+export const lightTheme = {
   color: '#000000',
-  bgColor: '#FFFFFF',
+  bgColor: '#FDF4F4',
   gray: '#343434',
 };
 /** 흰색 배경 */
-export const lightTheme = {
+export const darkTheme = {
   color: '#FFFFFF',
   bgColor: '#000000',
   gray: '#D9D9D9',
@@ -96,7 +90,7 @@ const util = {
     }
     &::-webkit-scrollbar-track {
       /** 스크롤바 뒷 배경 색상 */
-      background: ${({ theme }) => theme.colors.slate50};
+      background: ${({ theme }) => theme.colors.gray100};
     }
   `,
 };
@@ -107,6 +101,7 @@ const theme = {
   fontSize,
   size,
   util,
+  borderRadius: '4px',
 };
 
 export default theme;
