@@ -13,7 +13,13 @@ const AddFile = () => {
     }).then((res) => res.json());
   };
 
-  return <button onClick={addFile}>파일 생성</button>;
+  return (
+    <div>
+      <input />
+      <input />
+      <button onClick={addFile}>파일 생성</button>
+    </div>
+  );
 };
 
 export default AddFile;
