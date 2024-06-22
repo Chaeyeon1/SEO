@@ -1,5 +1,5 @@
 import type { Metadata, MetadataRoute, ResolvingMetadata } from 'next';
-import { BASE_URL } from '../constant';
+import { BASE_URL } from '../../constant';
 
 type Props = {
   params: { id: string };
