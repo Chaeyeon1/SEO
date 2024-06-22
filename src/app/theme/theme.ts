@@ -2,15 +2,15 @@ import { css } from 'styled-components';
 
 /** 자주 사용하는 색상들 */
 const colors = {
-  slate100: '#FED9DA',
-  slate200: '#FDB3B4',
-  slate300: '#FB8D8F',
-  slate400: '#FA6769',
-  slate500: '#F94144',
-  slate600: '#C73436',
-  slate700: '#952729',
-  slate800: '#952729',
-  slate900: '#320D0E',
+  main100: '#FED9DA',
+  main200: '#FDB3B4',
+  main300: '#FB8D8F',
+  main400: '#FA6769',
+  main500: '#F94144',
+  main600: '#C73436',
+  main700: '#952729',
+  main800: '#952729',
+  main900: '#320D0E',
   /* 나머지 색상들 생략 ( https://tailwindcss.com/docs/customizing-colors ) */
 
   gray100: '#999999',
@@ -23,6 +23,7 @@ const colors = {
   color: '',
   bgColor: '',
   gray: '',
+  constraintColor: '',
 };
 
 /** 검정 배경 */
@@ -30,12 +31,14 @@ export const lightTheme = {
   color: '#000000',
   bgColor: '#FDF4F4',
   gray: '#343434',
+  constraintColor: '#ffffff',
 };
 /** 흰색 배경 */
 export const darkTheme = {
   color: '#FFFFFF',
   bgColor: '#000000',
   gray: '#D9D9D9',
+  constraintColor: '#ffffff',
 };
 
 /** 반응형 사이즈 */
@@ -90,7 +93,7 @@ const util = {
     }
     &::-webkit-scrollbar-track {
       /** 스크롤바 뒷 배경 색상 */
-      background: ${({ theme }) => theme.colors.gray100};
+      background: ${({ theme }) => theme.colors.main500};
     }
   `,
 };

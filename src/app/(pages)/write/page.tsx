@@ -1,12 +1,13 @@
 import React from 'react';
-import AddFile from '../_sections/AddFile';
+import { PlateEditor } from './_sections/PlateEditor';
+import { WritePageWrapper } from './_related/style';
+import ContainedButton from '@/app/components/button/PrimaryContainedButton';
 
 const page = () => {
   return (
-    <div>
-      <AddFile />
-      ww 잠실체가 맞나
-    </div>
+    <WritePageWrapper>
+      <PlateEditor />
+    </WritePageWrapper>
   );
 };
 
