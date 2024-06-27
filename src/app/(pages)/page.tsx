@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import AddFile from './_sections/AddFile';
 
 const page = () => {
   return (
@@ -35,7 +34,6 @@ const page = () => {
         상세 정보 보기
       </Link>
 
-      <AddFile />
       <h4 style={{ marginTop: '32px' }}> ** 2024-6-17 수정된 사항</h4>
       <div>교동이 팬클럽 본업으로 전환</div>
       <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>

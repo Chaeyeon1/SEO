@@ -1,7 +1,12 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import { BaseInputStyle } from './style';
 
-const OutlinedInput = ({ ...rest }: InputHTMLAttributes<HTMLInputElement>) => {
+const OutlinedInput = ({
+  ...rest
+}: DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>) => {
   return <BaseInputStyle {...rest} />;
 };
 

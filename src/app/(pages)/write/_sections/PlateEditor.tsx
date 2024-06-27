@@ -6,6 +6,7 @@ import {
   Plate,
   RenderAfterEditable,
   PlateLeaf,
+  TElement,
 } from '@udecode/plate-common';
 import {
   createParagraphPlugin,
@@ -162,8 +163,13 @@ import { useState } from 'react';
 import { TextType } from '../_related/type';
 import ContainedButton from '@/app/components/button/PrimaryContainedButton';
 import { BASE_URL } from '@/app/constant';
-import { Title, WriteSection, WriteSectionHeader } from '../_related/style';
+import {
+  TitleInput,
+  WriteSection,
+  WriteSectionHeader,
+} from '../_related/style';
 import OutlinedInput from '@/app/components/input/OutlinedInput';
+import { enqueueSnackbar } from 'notistack';
 
 const plugins = createPlugins(
   [
@@ -365,32 +371,43 @@ const plugins = createPlugins(
   }
 );
 
-const initialValue = [
-  {
-    id: '1',
-    type: 'p',
-    children: [{ text: 'Hello, World!' }],
-  },
-];
-
 export function PlateEditor() {
-  const [text, setText] = useState<TextType>();
-  console.log(text);
+  const [fileName, setFileName] = useState<string>();
+  const [text, setText] = useState<TElement[]>();
 
   const addFile = async () => {
-    await fetch(`${BASE_URL}/api`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ fileName: '첫 게시글', text }),
-    }).then((res) => res.json());
+    try {
+      const response = await fetch(`${BASE_URL}/api`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fileName, text }),
+      });
+
+      if (!response.ok) {
+        const contentType = response.headers.get('Content-Type');
+        if (contentType && contentType.includes('application/json')) {
+          const errorData = await response.json();
+          throw new Error(errorData.message);
+        } else {
+          const errorText = await response.text();
+          throw new Error(errorText);
+        }
+      }
+    } catch (e: any) {
+      enqueueSnackbar({ variant: 'error', message: e.message });
+    }
   };
 
   return (
     <WriteSection>
       <WriteSectionHeader>
-        <Title placeholder='Title' />
+        <TitleInput
+          placeholder='Title'
+          value={fileName}
+          onChange={(e) => setFileName(e.target.value)}
+        />
         <ContainedButton onClick={addFile} label='글쓰기' />
       </WriteSectionHeader>
       <TooltipProvider>
@@ -398,7 +415,6 @@ export function PlateEditor() {
           <CommentsProvider users={{}} myUserId='1'>
             <Plate
               plugins={plugins}
-              initialValue={initialValue}
               onChange={(newValue) => setText(newValue)}
               // readOnly
             >

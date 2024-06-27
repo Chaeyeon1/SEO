@@ -10,6 +10,7 @@ export async function GET(req: Request) {
   return NextResponse.json(productName);
 }
 
+// POST /api
 export async function POST(req: Request) {
   const data = await req.json();
   const { text, fileName } = data;
@@ -35,7 +36,7 @@ export async function POST(req: Request) {
     });
   }
 
-  fs.writeFile(filePath, text, (err) => {
+  fs.writeFile(filePath, JSON.stringify(text), (err) => {
     if (err) {
       return new Response(`Failed to save text`, {
         status: 400,

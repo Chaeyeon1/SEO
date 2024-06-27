@@ -24,7 +24,7 @@ export const WriteSectionHeader = styled.div`
   gap: 24px;
 `;
 
-export const Title = styled(OutlinedInput)`
+export const TitleInput = styled(OutlinedInput)`
   width: 100%;
   font-size: 28px;
   font-weight: bold;
