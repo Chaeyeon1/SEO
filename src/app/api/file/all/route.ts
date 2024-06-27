@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { NextResponse } from 'next/server';
 import path from 'path';
 
 export async function GET() {
@@ -18,4 +19,6 @@ export async function GET() {
       status: 200,
     });
   });
+
+  return NextResponse.json('Hello');
 }
