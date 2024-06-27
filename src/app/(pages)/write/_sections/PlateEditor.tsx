@@ -377,7 +377,7 @@ export function PlateEditor() {
 
   const addFile = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/api`, {
+      const response = await fetch(`/api`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
