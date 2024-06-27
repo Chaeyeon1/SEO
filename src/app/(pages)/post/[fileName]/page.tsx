@@ -1,3 +1,4 @@
+import { BASE_URL } from '@/app/constant';
 import React from 'react';
 
 const page = () => {
