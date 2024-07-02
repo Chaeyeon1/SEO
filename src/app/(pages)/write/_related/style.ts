@@ -20,13 +20,21 @@ export const WriteSectionHeader = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   gap: 24px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 `;
 
 export const TitleInput = styled(OutlinedInput)`
   width: 100%;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 400;
   box-sizing: border-box;
 `;

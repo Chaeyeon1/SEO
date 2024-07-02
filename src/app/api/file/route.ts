@@ -13,7 +13,6 @@ export async function GET(req: Request) {
 
   const dataDirectory = path.join(process.cwd(), 'src', 'app', 'data');
   const filePath = path.join(dataDirectory, fileName);
-
   // 파일이 존재하는지 확인
   if (!fs.existsSync(filePath)) {
     return new Response(`File not found`, {
